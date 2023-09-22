@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFramework>netstandard2.0</TargetFramework>
+		<TargetFramework>netstandard2.1</TargetFramework>
 		<IsPackable Condition="$(IsPackable) == ' '">false</IsPackable>
 		<IncludeSymbols>false</IncludeSymbols>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -9,15 +9,21 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<PackageId>Autodesk.Revit.SDK</PackageId>
+		<PackageId>Autodesk.Revit.SDK.2024</PackageId>
 		<Version>$(Version)</Version>
 		<Authors>Zhmayev Yaroslav</Authors>
 		<Company>CodeCave LLC</Company>
 		<PackageTags>revit, sdk, api, sdk, autodesk, revitapi, revitsdk, C#, addin, plugin, command, external application, applicaion, $(RevitVersion), revit$(RevitVersion)</PackageTags>
-		<Description>The Software Development Toolkit (SDK) provides extensive .NET code samples and documentation to help you get started developing with the Revit API.</Description>
+		<Description>The Software Development Toolkit (SDK) provides extensive .NET code samples and documentation to help you get started developing with the Revit API.
+
+This is a fork of the original package Autodesk.Revit.SDK to support Revit 2024.
+
+The original package by CodeCave LLC: https://github.com/CodeCavePro/revit-sdk.
+The work to support 2024 was done by Nathan Miller: https://github.com/archinate/revit-sdk.
+This is an additional fork to support the Nuget package: https://github.com/rchen-wsp/revit-sdk.</Description>
 		<Copyright>© Autodesk Inc. All rights reserved</Copyright>
 		<PackageProjectUrl>https://www.autodesk.com/developer-network/platform-technologies/revit</PackageProjectUrl>
-		<RepositoryUrl>https://github.com/CodeCavePro/RevitSDK</RepositoryUrl>
+		<RepositoryUrl>https://github.com/rchen-wsp/revit-sdk</RepositoryUrl>
 		<RepositoryType>Git</RepositoryType>
 		<NeutralLanguage>en</NeutralLanguage>
 	</PropertyGroup>
@@ -48,7 +54,7 @@
 		<Content Include="../assets/Revit-2014.png" Pack="true" PackagePath="Revit.png" Condition="'$(RevitVersion)' == '2014'" />
 		<Content Include="../assets/Revit-2015.png" Pack="true" PackagePath="Revit.png" Condition="'$(RevitVersion)' == '2015'" />
 		<Content Include="../assets/Revit-2017.png" Pack="true" PackagePath="Revit.png" Condition="'$(RevitVersion)' != '2014' And '$(RevitVersion)' != '2015' And '$(RevitVersion)' != '2023' And '$(RevitVersion)' != '2024'" />
-		<Content Include="../assets/Revit-2023.png" Pack="true" PackagePath="Revit.png" Condition="'$(RevitVersion)' == '2023' And '$(RevitVersion)' == '2024'" />
+		<Content Include="../assets/Revit-2023.png" Pack="true" PackagePath="Revit.png" Condition="'$(RevitVersion)' == '2023' Or '$(RevitVersion)' == '2024'" />
 	</ItemGroup>
 
 	<!--
